@@ -1,5 +1,9 @@
 import java.util.Objects;
 
+/**
+ * Клас представляє інформацію про оренду автомобіля.
+ * Має агрегацію з класами Car і Renter.
+ */
 public class Rental {
     private Car car;
     private Renter renter;
@@ -10,70 +14,81 @@ public class Rental {
     private double pricePerDay;
     private double totalPrice;
 
-    private Rental(Builder builder) {
-        this.car = builder.car;
-        this.renter = builder.renter;
-        this.pickupLocation = builder.pickupLocation;
-        this.dropoffLocation = builder.dropoffLocation;
-        this.startDate = builder.startDate;
-        this.endDate = builder.endDate;
-        this.pricePerDay = builder.pricePerDay;
-        this.totalPrice = builder.totalPrice;
+    public Rental(Car car, Renter renter, String pickupLocation, String dropoffLocation, String startDate, String endDate, double pricePerDay, double totalPrice) {
+        this.car = car;
+        this.renter = renter;
+        this.pickupLocation = pickupLocation;
+        this.dropoffLocation = dropoffLocation;
+        this.startDate = startDate;
+        this.endDate = endDate;
+        this.pricePerDay = pricePerDay;
+        this.totalPrice = totalPrice;
     }
 
-    public static class Builder {
-        private Car car;
-        private Renter renter;
-        private String pickupLocation;
-        private String dropoffLocation;
-        private String startDate;
-        private String endDate;
-        private double pricePerDay;
-        private double totalPrice;
+    // Getters and Setters
 
-        public Builder setCar(Car car) {
-            this.car = car;
-            return this;
-        }
+    public Car getCar() {
+        return car;
+    }
 
-        public Builder setRenter(Renter renter) {
-            this.renter = renter;
-            return this;
-        }
+    public void setCar(Car car) {
+        this.car = car;
+    }
 
-        public Builder setPickupLocation(String pickupLocation) {
-            this.pickupLocation = pickupLocation;
-            return this;
-        }
+    public Renter getRenter() {
+        return renter;
+    }
 
-        public Builder setDropoffLocation(String dropoffLocation) {
-            this.dropoffLocation = dropoffLocation;
-            return this;
-        }
+    public void setRenter(Renter renter) {
+        this.renter = renter;
+    }
 
-        public Builder setStartDate(String startDate) {
-            this.startDate = startDate;
-            return this;
-        }
+    public String getPickupLocation() {
+        return pickupLocation;
+    }
 
-        public Builder setEndDate(String endDate) {
-            this.endDate = endDate;
-            return this;
-        }
+    public void setPickupLocation(String pickupLocation) {
+        this.pickupLocation = pickupLocation;
+    }
 
-        public Builder setPricePerDay(double pricePerDay) {
-            this.pricePerDay = pricePerDay;
-            return this;
-        }
+    public String getDropoffLocation() {
+        return dropoffLocation;
+    }
 
-        public Builder setTotalPrice(double totalPrice) {
-            this.totalPrice = totalPrice;
-            return this;
-        }
+    public void setDropoffLocation(String dropoffLocation) {
+        this.dropoffLocation = dropoffLocation;
+    }
 
-        public Rental build() {
-            return new Rental(this);
-        }
+    public String getStartDate() {
+        return startDate;
+    }
+
+    public void setStartDate(String startDate) {
+        this.startDate = startDate;
+    }
+
+    public String getEndDate() {
+        return endDate;
+    }
+
+    public void setEndDate(String endDate) {
+        this.endDate = endDate;
+    }
+
+    public double getPricePerDay() {
+        return pricePerDay;
+    }
+
+    public void setPricePerDay(double pricePerDay) {
+        this.pricePerDay = pricePerDay;
+    }
+
+    public double getTotalPrice() {
+        return totalPrice;
+    }
+
+    public void setTotalPrice(double totalPrice) {
+        this.totalPrice = totalPrice;
     }
 
     @Override

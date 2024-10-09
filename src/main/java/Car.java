@@ -1,5 +1,8 @@
 import java.util.Objects;
 
+/**
+ * Клас представляє інформацію про автомобіль, доступний для оренди.
+ */
 public class Car {
     private String make;
     private String vin;
@@ -14,6 +17,8 @@ public class Car {
         this.releaseDate = releaseDate;
         this.mileage = mileage;
     }
+
+    // Getters and Setters
 
     public String getMake() {
         return make;
